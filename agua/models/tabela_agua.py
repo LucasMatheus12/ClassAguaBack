@@ -7,6 +7,134 @@ class TabelaAgua(models.Model):
         max_length=100,
     )
 
+    # Boleanos
+
+    verificacao_efeito_toxico_cronico = models.BooleanField(
+        verbose_name='não verificação de efeito tóxico crônico a organismos, de acordo com os critérios estabelecidos pelo órgão ambiental competente ',
+        blank=False,
+        default=False,        
+    )
+
+    verificacao_efeito_toxico_agudo = models.BooleanField(
+        verbose_name='não verificação de efeito tóxico agudo a organismos, de acordo com os critérios estabelecidos pelo órgão ambiental competente, ou, na sua ausência, por instituições nacionais ou internacionais renomadas',
+        blank=False,
+        default=False,        
+    )
+
+    materiais_flutuantes = models.BooleanField(
+        verbose_name='materiais flutuantes, inclusive espumas não naturais: virtualmente ausentes',
+        blank=False,
+        default=False,        
+    )
+
+    oleos_graxas_virtualmente_ausentes = models.BooleanField(
+        verbose_name='óleos e graxas: virtualmente ausentes',
+        blank=False,
+        default=False,        
+    )
+
+    substancias_comuniquem_gosto_odor = models.BooleanField(
+        verbose_name='substâncias que comuniquem gosto ou odor: virtualmente ausentes',
+        blank=False,
+        default=False,        
+    )
+
+    corantes_provenientes_fontes_antropicas = models.BooleanField(
+        verbose_name='corantes provenientes de fontes antrópicas: virtualmente ausentes',
+        blank=False,
+        default=False,        
+    )
+
+    residuos_solidos_objetaveis = models.BooleanField(
+        verbose_name='resíduos sólidos objetáveis: virtualmente ausentes',
+        blank=False,
+        default=False,        
+    )
+
+    cor_verdadeira = models.BooleanField(
+        verbose_name='cor verdadeira: nível de cor natural do corpo de água em mg Pt/L',
+        blank=False,
+        default=False,        
+    )
+
+    nao_presenca_corantes = models.BooleanField(
+        verbose_name='não tem presença de corantes provenientes de fontes antrópicas que não sejam removíveis por processo de coagulação, sedimentação e filtração convencionais ',
+        blank=False,
+        default=False,        
+    )
+
+    coliformes_termotolerantes_limite_200 = models.BooleanField(
+        verbose_name='coliformes termotolerantes: para o uso de recreação de contato primário deverão ser obedecidos os padrões de qualidade de balneabilidade, previstos na Resolução CONAMA n° 274, de 2000. Para os demais usos, não deverá ser excedido um limite de 200 coliformes termotolerantes por 100 mililitros em 80% ou mais, de pelo menos 6 amostras, coletadas durante o período de um ano, com freqüência bimestral.',
+        blank=False,
+        default=False,        
+    )
+
+    coliformes_termotolerantes_limite_1000 = models.BooleanField(
+        verbose_name='coliformes termotolerantes: para uso de recreação de contato primário deverá ser obedecida a Resolução CONAMA n° 274, de 2000. Para os demais usos, não deverá ser excedido um limite de 1.000 coliformes termotolerantes por 100 mililitros em 80% ou mais de pelo menos 6 (seis) amostras coletadas durante o período de um ano, com freqüência bimestral.',
+        blank=False,
+        default=False,        
+    )
+
+    coliformes_termotolerantes_limite_2500 = models.BooleanField(
+        verbose_name='coliformes termotolerantes: para o uso de recreação de contato secundário não deverá ser excedido um limite de 2500 colif. termotolerantes por 100 mililitros em 80% ou mais de pelo menos 6 amostras, coletadas durante o período de um ano, com freqüência bimestral.',
+        blank=False,
+        default=False,        
+    )
+
+    cianobacterias_dessedentacao_animais = models.BooleanField(
+        verbose_name='cianobactérias para dessedentação de animais: os valores de densidade de cianobactérias não deverão exceder 50.000 cel/ml, ou 5mm3/L',
+        blank=False,
+        default=False,        
+    )
+
+    odor_aspecto_nao_objetaveis = models.BooleanField(
+        verbose_name='odor e aspecto: não objetáveis',
+        blank=False,
+        default=False,        
+    )
+
+    oleos_graxas_toleram_iridescencias = models.BooleanField(
+        verbose_name='óleos e graxas: toleram-se iridescências',
+        blank=False,
+        default=False,        
+    )
+
+    substancias_facilmente_sedimentaveis = models.BooleanField(
+        verbose_name='substâncias facilmente sedimentáveis que contribuam para o assoreamento de canais de navegação: virtualmente ausentes',
+        blank=False,
+        default=False,        
+    )
+
+    fenois_totais_C6H5OH = models.BooleanField(
+        verbose_name='fenóis totais (substâncias que reagem com 4 - aminoantipirina) até 1,0 mg/L de C6H5OH',
+        blank=False,
+        default=False,        
+    )
+
+    substancias_produzem_odor_turbidez_virtualmente_ausentes = models.BooleanField(
+        verbose_name='substâncias que produzem odor e turbidez: virtualmente ausentes',
+        blank=False,
+        default=False,        
+    )
+
+    coliformes_termotolerantes_limite_43_por_100ml = models.BooleanField(
+        verbose_name='coliformes termolerantes: para o uso de recreação de contato primário deverá ser obedecida a Resolução CONAMA n° 274, de 2000. Para o cultivo de moluscos bivalves destinados à alimentação humana, a média geométrica da densidade de coliformes termotolerantes, de um mínimo de 15 amostras coletadas no mesmo local, não deverá exceder 43 por 100 mililitros, e o percentil 90% não deverá ultrapassar 88 coliformes termolerantes por 100 mililitros.',
+        blank=False,
+        default=False,        
+    )
+
+    coliformes_termotolerantes_limite_2500_por_100ml = models.BooleanField(
+        verbose_name='coliformes termotolerantes: não deverá ser excedido um limite de 2500 por 100 mililitros em 80% ou mais de pelo menos 6 amostras coletadas durante o período de um ano, com freqüência bimestral',
+        blank=False,
+        default=False,        
+    )
+
+    coliformes_termotolerantes_limite_4000 = models.BooleanField(
+        verbose_name='coliformes termotolerantes: não deverá ser excedido um limite de 4.000 coliformes termotolerantes por 100 mililitros em 80% ou mais de pelo menos 6 amostras coletadas durante o período de um ano, com freqüência bimestral. ',
+        blank=False,
+        default=False,        
+    )
+
     ## I - condições de qualidade de água - valores
                                         
     salinidade_agua = models.FloatField(

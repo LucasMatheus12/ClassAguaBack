@@ -20,6 +20,92 @@ class TabelaAguaViewSet(viewsets.ModelViewSet):
     def tipo_agua(self, request):
         tabelas = TabelaAgua.objects.all()
 
+        ## Boleanos
+
+        verificacao_efeito_toxico_cronico = request.data.get('verificacao_efeito_toxico_cronico', None)
+        if verificacao_efeito_toxico_cronico:
+            tipo = tabelas.filter(verificacao_efeito_toxico_cronico=verificacao_efeito_toxico_cronico)
+        
+        verificacao_efeito_toxico_agudo = request.data.get('verificacao_efeito_toxico_agudo', None)
+        if verificacao_efeito_toxico_agudo:
+            tipo = tabelas.filter(verificacao_efeito_toxico_agudo=verificacao_efeito_toxico_agudo)
+        
+        materiais_flutuantes = request.data.get('materiais_flutuantes', None)
+        if materiais_flutuantes:
+            tipo = tabelas.filter(materiais_flutuantes=materiais_flutuantes)
+        
+        oleos_graxas_virtualmente_ausentes = request.data.get('oleos_graxas_virtualmente_ausentes', None)
+        if oleos_graxas_virtualmente_ausentes:
+            tipo = tabelas.filter(oleos_graxas_virtualmente_ausentes=oleos_graxas_virtualmente_ausentes)
+        
+        substancias_comuniquem_gosto_odor = request.data.get('substancias_comuniquem_gosto_odor', None)
+        if substancias_comuniquem_gosto_odor:
+            tipo = tabelas.filter(substancias_comuniquem_gosto_odor=substancias_comuniquem_gosto_odor)
+        
+        corantes_provenientes_fontes_antropicas = request.data.get('corantes_provenientes_fontes_antropicas', None)
+        if corantes_provenientes_fontes_antropicas:
+            tipo = tabelas.filter(corantes_provenientes_fontes_antropicas=corantes_provenientes_fontes_antropicas)
+        
+        residuos_solidos_objetaveis = request.data.get('residuos_solidos_objetaveis', None)
+        if residuos_solidos_objetaveis:
+            tipo = tabelas.filter(residuos_solidos_objetaveis=residuos_solidos_objetaveis)
+        
+        cor_verdadeira = request.data.get('cor_verdadeira', None)
+        if cor_verdadeira:
+            tipo = tabelas.filter(cor_verdadeira=cor_verdadeira)
+        
+        nao_presenca_corantes = request.data.get('nao_presenca_corantes', None)
+        if nao_presenca_corantes:
+            tipo = tabelas.filter(nao_presenca_corantes=nao_presenca_corantes)
+        
+        coliformes_termotolerantes_limite_200 = request.data.get('coliformes_termotolerantes_limite_200', None)
+        if coliformes_termotolerantes_limite_200:
+            tipo = tabelas.filter(coliformes_termotolerantes_limite_200=coliformes_termotolerantes_limite_200)
+        
+        coliformes_termotolerantes_limite_1000 = request.data.get('coliformes_termotolerantes_limite_1000', None)
+        if coliformes_termotolerantes_limite_1000:
+            tipo = tabelas.filter(coliformes_termotolerantes_limite_1000=coliformes_termotolerantes_limite_1000)
+        
+        coliformes_termotolerantes_limite_2500 = request.data.get('coliformes_termotolerantes_limite_2500', None)
+        if coliformes_termotolerantes_limite_2500:
+            tipo = tabelas.filter(coliformes_termotolerantes_limite_2500=coliformes_termotolerantes_limite_2500)
+        
+        cianobacterias_dessedentacao_animais = request.data.get('cianobacterias_dessedentacao_animais', None)
+        if cianobacterias_dessedentacao_animais:
+            tipo = tabelas.filter(cianobacterias_dessedentacao_animais=cianobacterias_dessedentacao_animais)
+        
+        odor_aspecto_nao_objetaveis = request.data.get('odor_aspecto_nao_objetaveis', None)
+        if odor_aspecto_nao_objetaveis:
+            tipo = tabelas.filter(odor_aspecto_nao_objetaveis=odor_aspecto_nao_objetaveis)
+        
+        oleos_graxas_toleram_iridescencias = request.data.get('oleos_graxas_toleram_iridescencias', None)
+        if oleos_graxas_toleram_iridescencias:
+            tipo = tabelas.filter(oleos_graxas_toleram_iridescencias=oleos_graxas_toleram_iridescencias)
+
+        substancias_facilmente_sedimentaveis = request.data.get('substancias_facilmente_sedimentaveis', None)
+        if substancias_facilmente_sedimentaveis:
+            tipo = tabelas.filter(substancias_facilmente_sedimentaveis=substancias_facilmente_sedimentaveis)
+        
+        fenois_totais_C6H5OH = request.data.get('fenois_totais_C6H5OH', None)
+        if fenois_totais_C6H5OH:
+            tipo = tabelas.filter(fenois_totais_C6H5OH=fenois_totais_C6H5OH)
+        
+        substancias_produzem_odor_turbidez_virtualmente_ausentes = request.data.get('substancias_produzem_odor_turbidez_virtualmente_ausentes', None)
+        if substancias_produzem_odor_turbidez_virtualmente_ausentes:
+            tipo = tabelas.filter(substancias_produzem_odor_turbidez_virtualmente_ausentes=substancias_produzem_odor_turbidez_virtualmente_ausentes)
+        
+        coliformes_termotolerantes_limite_43_por_100ml = request.data.get('coliformes_termotolerantes_limite_43_por_100ml', None)
+        if coliformes_termotolerantes_limite_43_por_100ml:
+            tipo = tabelas.filter(coliformes_termotolerantes_limite_43_por_100ml=coliformes_termotolerantes_limite_43_por_100ml)
+        
+        coliformes_termotolerantes_limite_2500_por_100ml = request.data.get('coliformes_termotolerantes_limite_2500_por_100ml', None)
+        if coliformes_termotolerantes_limite_2500_por_100ml:
+            tipo = tabelas.filter(coliformes_termotolerantes_limite_2500_por_100ml=coliformes_termotolerantes_limite_2500_por_100ml)
+
+        coliformes_termotolerantes_limite_4000 = request.data.get('coliformes_termotolerantes_limite_4000', None)
+        if coliformes_termotolerantes_limite_4000:
+            tipo = tabelas.filter(coliformes_termotolerantes_limite_4000=coliformes_termotolerantes_limite_4000)
+
         ## I - condições de qualidade de água - valores
 
         salinidade_agua = request.data.get('salinidade_agua', None)
