@@ -20,6 +20,46 @@ class TabelaAguaViewSet(viewsets.ModelViewSet):
     def tipo_agua(self, request):
         tabelas = TabelaAgua.objects.all()
 
+        ## I - condições de qualidade de água - valores
+
+        salinidade_agua = request.data.get('salinidade_agua', None)
+        if salinidade_agua:
+            tipo = tabelas.filter(salinidade_agua__lte=salinidade_agua)
+
+        dbo_5_dias_a_20_C = request.data.get('dbo_5_dias_a_20_C', None)
+        if dbo_5_dias_a_20_C:
+            tipo = tabelas.filter(dbo_5_dias_a_20_C__lte=dbo_5_dias_a_20_C)
+        
+        od_qualquer_amostra = request.data.get('od_qualquer_amostra', None)
+        if od_qualquer_amostra:
+            tipo = tabelas.filter(od_qualquer_amostra__lte=od_qualquer_amostra)
+        
+        turbidez_unidades_nefelometrica_turbidez = request.data.get('turbidez_unidades_nefelometrica_turbidez', None)
+        if turbidez_unidades_nefelometrica_turbidez:
+            tipo = tabelas.filter(turbidez_unidades_nefelometrica_turbidez__lte=turbidez_unidades_nefelometrica_turbidez)
+
+        ph = request.data.get('ph', None)
+        if ph:
+            tipo = tabelas.filter(ph__lte=ph)
+        
+        cor_verdadeira = request.data.get('cor_verdadeira', None)
+        if cor_verdadeira:
+            tipo = tabelas.filter(cor_verdadeira__lte=cor_verdadeira)
+        
+        clorofila_a = request.data.get('clorofila_a', None)
+        if clorofila_a:
+            tipo = tabelas.filter(clorofila_a__lte=clorofila_a)
+        
+        densidade_cianobacterias = request.data.get('densidade_cianobacterias', None)
+        if densidade_cianobacterias:
+            tipo = tabelas.filter(densidade_cianobacterias__lte=densidade_cianobacterias)
+        
+        carbono_organico_total = request.data.get('carbono_organico_total', None)
+        if carbono_organico_total:
+            tipo = tabelas.filter(carbono_organico_total__lte=carbono_organico_total)
+
+        ##
+
         arsenio_total = request.data.get('arsenio_total', None)
         if arsenio_total:
             tipo = tabelas.filter(arsenio_total__lte=arsenio_total)

@@ -7,6 +7,64 @@ class TabelaAgua(models.Model):
         max_length=100,
     )
 
+    ## I - condições de qualidade de água - valores
+                                        
+    salinidade_agua = models.FloatField(
+        verbose_name='salinidade da água em partes por mil (‰) ou g/kg - g/kg',
+        blank=False,
+        null=True,
+    )
+
+    dbo_5_dias_a_20_C = models.FloatField(
+        verbose_name='DBO 5 dias a 20°C - mg/L O2',
+        blank=False,
+        null=True,
+    )
+
+    od_qualquer_amostra = models.FloatField(
+        verbose_name='OD, em qualquer amostra - mg/L O2',
+        blank=False,
+        null=True,
+    )
+
+    turbidez_unidades_nefelometrica_turbidez= models.FloatField(
+        verbose_name='turbidez em unidades nefelométrica de turbidez (UNT) - UNT',
+        blank=False,
+        null=True,
+    )
+
+    ph = models.FloatField(
+        verbose_name='Potencial hidrogeniônico (pH) - UNT',
+        blank=False,
+        null=True,
+    )
+
+    cor_verdadeira = models.FloatField(
+        verbose_name='cor verdadeira em mg Pt/L - mg Pt/L',
+        blank=False,
+        null=True,
+    )
+
+    clorofila_a = models.FloatField(
+        verbose_name='clorofila a em ìg/L - ìg/L',
+        blank=False,
+        null=True,
+    )
+
+    densidade_cianobacterias = models.FloatField(
+        verbose_name='densidade de cianobactérias em cel/mL - cel/Ml',
+        blank=False,
+        null=True,
+    )
+
+    carbono_organico_total= models.FloatField(
+        verbose_name='carbono orgânico total em mg/L, como C - mg/L',
+        blank=False,
+        null=True,
+    )
+
+    ## Valores
+
     arsenio_total = models.FloatField(
         verbose_name='Arsênio total - mg/L As',
         blank=False,
@@ -570,6 +628,8 @@ class TabelaAgua(models.Model):
         blank=False,
         null=True,
     )
+
+    ## Padrões em substituição ou adicionalmente
 
 
     ordem = models.IntegerField()
